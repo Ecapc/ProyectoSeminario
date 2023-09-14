@@ -1,4 +1,4 @@
-<header class="bg-gray-600 sticky top-0 z-50" x-data="dropdown()">
+<header class="bg-gray-600 sticky top-0">
     <div class="container flex items-center h-16 justify-between md:justify-start">
         <a :class="{ '!bg-opacity-100 !text-white': open }" x-on:click="show()"
             class="flex flex-col items-center justify-center order-last md:order-first px-6 md:px-4 bg-gray-900 bg-opacity-25 text-white cursor-pointer h-full">
@@ -18,7 +18,7 @@
         </div>
 
         <!-- Menu de logeo -->
-        <div>
+        <div class="mx-6 relative">
             @auth
                 <div class="hidden sm:flex sm:items-center sm:ml-6 md:block">
                     <!-- Teams Dropdown -->
@@ -131,9 +131,26 @@
                 </x-dropdown>
             @endauth
         </div>
-         <!-- Fin Menu de logeo -->
+        <!-- Fin Menu de logeo -->
 
-         
+
     </div>
-    
+
+    <nav id="navigation-menu" class="bg-blueGray-400 bg-opacity-25 w-full absolute">
+        <div class="container h-full">
+            <div class="grid grid-cols-4 h-full">
+                <ul class=" bg-white">
+                    <li class="navigation-link text-black hover:bg-blueGray-600 hover:text-white">
+                        <a href="" class="py-2 px-4 text-sm flex items-center">
+                            Informacion
+                        </a>
+                        <div class="navigation-submenu bg-red-500 absolute w-3/4 top-0 h-full right-0">
+                            Informacion general
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
 </header>
