@@ -139,18 +139,21 @@
     <nav id="navigation-menu" class="bg-blueGray-400 bg-opacity-25 w-full absolute">
         <div class="container h-full">
             <div class="grid grid-cols-4 h-full">
-                <ul class=" bg-white">
+                <ul class="bg-white">
+                    @foreach ($categories as $category)
                     <li class="navigation-link text-black hover:bg-blueGray-600 hover:text-white">
-                        <a href="" class="py-2 px-4 text-sm flex items-center">
-                            Informacion
+                        <a href="{{route('categories.show',$category)}}" class="py-2 px-4 text-sm flex items-center">
+                            <span class="flex justify-center w-9">
+                                {!!$category->icon!!}
+                            </span>
+                            {{$category->name}}
                         </a>
-                        <div class="navigation-submenu bg-red-500 absolute w-3/4 top-0 h-full right-0">
-                            Informacion general
-                        </div>
                     </li>
+                    @endforeach
                 </ul>
             </div>
-
         </div>
     </nav>
+    
+    
 </header>
